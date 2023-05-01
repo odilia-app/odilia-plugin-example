@@ -1,0 +1,22 @@
+[package]
+name = "odilia-plugin-example"
+version = "0.1.0"
+edition = "2021"
+description = "A simple example of how one may implement their very own plugin for the Odilia screen reader."
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+# ~2MB -> 50KB, worth it. And this keeps symbols like function names, etc.
+strip = "debuginfo"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[package.metadata.wapm]
+namespace = "odilia"
+abi = "none"
+bindings = { wai-version = "0.1.0", exports = "odilia-plugin-example.wai" }
+
+[dependencies]
+wai-bindgen-rust = "0.2.3"

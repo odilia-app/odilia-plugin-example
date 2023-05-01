@@ -1,0 +1,17 @@
+enum hook-side {
+	pre,
+	post,
+	core
+}
+
+enum hook-system {
+	atspi,
+	odilia,
+	ssip,
+	modules
+}
+
+record hook {
+	system: hook-system,
+	side: hook-side
+}

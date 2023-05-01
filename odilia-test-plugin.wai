@@ -1,0 +1,3 @@
+use * from odilia-plugin-types
+addone: func(a: s32) -> s32
+init: func() -> bool
